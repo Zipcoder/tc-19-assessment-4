@@ -20,7 +20,7 @@ public class StringUtils {
        // String text = baseString;
        // char characterToCheckFor = characterToCheckFor.charAt(0);
 
-        return null;
+        return baseString.charAt(indexOfString) == characterToCheckFor;
     }
 
     public static String[] getAllSubStrings(String string) {
@@ -29,6 +29,8 @@ public class StringUtils {
     }
 
     public static Integer getNumberOfSubStrings(String input){
-        return null;
+        String[] resultArray = getAllSubStrings(input);
+
+        return resultArray.length;
     }
 }
