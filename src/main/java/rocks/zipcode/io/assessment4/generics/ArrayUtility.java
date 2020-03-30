@@ -1,8 +1,7 @@
 package rocks.zipcode.io.assessment4.generics;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+
+
 import java.util.function.Function;
 
 /**
@@ -10,53 +9,29 @@ import java.util.function.Function;
  */
 public class ArrayUtility<SomeType> {
     private final SomeType[] array;
+
     public ArrayUtility(SomeType[] array) {
+
         this.array = array;
     }
 
     public SomeType findOddOccurringValue() {
-        HashMap<SomeType, Integer> occurrence = new HashMap<>();
-        for (SomeType currentKey : this.array) {
-            if (occurrence.containsKey(currentKey)) {
-                int currentValue = occurrence.get(currentKey);
-                occurrence.replace(currentKey, currentValue + 1);
-            } else {
-                occurrence.put(currentKey, 1);
-            }
-        }
-        Iterator<Map.Entry<SomeType, Integer>> iter = occurrence.entrySet().iterator();
-        while (iter.hasNext()) {
-            Map.Entry<SomeType, Integer>
-                    currentEntry = iter.next();
-            if (currentEntry.getValue() % 2 != 0) {
-                return currentEntry.getKey();
-            }
-        }
-        return null;
+        return findOccurringValue(1);
     }
-    public SomeType findEvenOccurringValue () {
-        HashMap<SomeType, Integer> occurrence = new HashMap<>();
-        for (SomeType currentKey : this.array) {
-            if (occurrence.containsKey(currentKey)) {
-                int currentValue = occurrence.get(currentKey);
-                occurrence.replace(currentKey, currentValue + 1);
-            } else {
-                occurrence.put(currentKey, 1);
-            }
-        }
-        Iterator<Map.Entry<SomeType, Integer>> iter = occurrence.entrySet().iterator();
-        while (iter.hasNext()) {
-            Map.Entry<SomeType, Integer>
-                    currentEntry = iter.next();
-            if (currentEntry.getValue() % 2 == 0) {
-
-                return currentEntry.getKey();
-            }
-        }
-        return null;
 
 
+    public SomeType findEvenOccurringValue() {
+        return findOccurringValue(0);
     }
+
+    public SomeType findOccurringValue(int i) {
+        for (SomeType st : array){
+            if (( getNumberOfOccurrences(st) + i ) % 2 == 0) return st;
+    }
+
+  return null;
+
+}
     public Integer getNumberOfOccurrences(SomeType valueToEvaluate) {
             int count =0;
             for(SomeType currentItem : array)
