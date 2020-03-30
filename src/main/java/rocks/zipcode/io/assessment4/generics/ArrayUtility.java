@@ -13,15 +13,29 @@ public class ArrayUtility<SomeType> {
     }
 
     public SomeType findOddOccurringValue() {
+        for (SomeType element : array) {
+            if(getNumberOfOccurrences(element) % 2 != 0)
+                return element;
+        }
         return null;
     }
 
     public SomeType findEvenOccurringValue() {
+        for (SomeType element : array) {
+            if(getNumberOfOccurrences(element) % 2 == 0)
+                return element;
+        }
         return null;
     }
 
     public Integer getNumberOfOccurrences(SomeType valueToEvaluate) {
-        return null;
+        Integer count = 0;
+        for (SomeType element : array) {
+            if(valueToEvaluate == element) {
+                count++;
+            }
+        }
+        return count;
     }
 
     public SomeType[] filter(Function<SomeType, Boolean> predicate) {
