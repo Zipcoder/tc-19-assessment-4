@@ -1,5 +1,7 @@
 package rocks.zipcode.io.assessment4.generics;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Function;
 
 /**
@@ -13,18 +15,43 @@ public class ArrayUtility<SomeType> {
     }
 
     public SomeType findOddOccurringValue() {
-        return null;
+
+        SomeType oddValue = null;
+
+        for(SomeType value : array) {
+            if (getNumberOfOccurrences(value) % 2 == 1) {
+                oddValue = value;
+            }
+        }
+        return oddValue;
     }
 
     public SomeType findEvenOccurringValue() {
-        return null;
+
+        SomeType evenValue = null;
+
+        for(SomeType value : array) {
+            if (getNumberOfOccurrences(value) % 2 == 0) {
+                evenValue = value;
+            }
+        }
+        return evenValue;
     }
 
     public Integer getNumberOfOccurrences(SomeType valueToEvaluate) {
-        return null;
+
+        int numberOfOccurrences = 0;
+
+        for(SomeType value : array) {
+            if (value.equals(valueToEvaluate)) {
+                numberOfOccurrences++;
+            }
+        }
+        return numberOfOccurrences;
     }
 
     public SomeType[] filter(Function<SomeType, Boolean> predicate) {
+
         return null;
     }
 }
