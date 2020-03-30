@@ -4,27 +4,42 @@ package rocks.zipcode.io.assessment4.arrays;
  * @author leon on 09/12/2018.
  */
 public class TicTacToe {
+    private String[] [] board = new String[2][2];
 
     public TicTacToe(String[][] board) {
+        this.board= board;
     }
 
     public TicTacToe() {
     }
 
     public String[] getRow(Integer value) {
-        return null;
+        return board[value];
     }
 
     public String[] getColumn(Integer value) {
-        return null;
+        String[] column = new String[3];
+        for(int i = 0; i< 3; i++){
+            column[i] = board[i][value];
+        }
+
+        return column;
     }
 
     public Boolean isRowHomogenous(Integer rowIndex) {
-        return null;
+        String[] row = getRow(rowIndex);
+        if(row[0].equals(row[1]) && row[1].equals(row[2])){
+            return true;
+        }
+        return false;
     }
 
     public Boolean isColumnHomogeneous(Integer columnIndex) {
-        return null;
+        String[] column  = getRow(columnIndex);
+        if(column[0].equals(column[1]) && column[0].equals(column[2])){
+            return true;
+        }
+        return false;
     }
 
     public String getWinner() {
@@ -32,6 +47,6 @@ public class TicTacToe {
     }
 
     public String[][] getBoard() {
-        return null;
+        return this.board;
     }
 }
