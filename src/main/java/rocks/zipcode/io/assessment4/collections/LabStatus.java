@@ -5,5 +5,5 @@ package rocks.zipcode.io.assessment4.collections;
  * Ensure there are enumerations for, `COMPLETED`, `INCOMPLETE`, `PENDING`
  */
 public enum LabStatus {
-    COMPLETED, INCOMPLETE, PENDING;;
+    COMPLETED, INCOMPLETE, PENDING;
 }
