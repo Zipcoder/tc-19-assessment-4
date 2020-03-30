@@ -18,7 +18,6 @@ public class SquareArrayAnalyzer {
      */
     public static Boolean compare(Integer[] inputArray, Integer[] squaredValues) {
         ArrayList<Integer> square = new ArrayList<>(Arrays.asList(squaredValues));
-
         for (Integer i : inputArray) {
             return square.contains(i * i);
         }

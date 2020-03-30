@@ -1,8 +1,6 @@
 package rocks.zipcode.io.assessment4.fundamentals;
 
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -29,7 +27,7 @@ public class StringUtils {
                 }
             }
         }
-        return listOfSubStrings.stream().toArray(String[]::new);
+        return listOfSubStrings.toArray(new String[0]);
     }
 
     public static Integer getNumberOfSubStrings(String input){
