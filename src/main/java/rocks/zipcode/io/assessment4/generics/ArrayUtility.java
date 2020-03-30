@@ -1,5 +1,8 @@
 package rocks.zipcode.io.assessment4.generics;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.function.Function;
 
 /**
@@ -39,6 +42,15 @@ public class ArrayUtility<SomeType> {
     }
 
     public SomeType[] filter(Function<SomeType, Boolean> predicate) {
-        return null;
+        List<SomeType> filtered = new ArrayList<>();
+        for (SomeType element : array) {
+            if(predicate.apply(element)) {
+                filtered.add(element);
+            }
+        }
+
+        SomeType[] filterArr = Arrays.copyOf(array, filtered.size());
+
+        return filtered.toArray(filterArr);
     }
 }
