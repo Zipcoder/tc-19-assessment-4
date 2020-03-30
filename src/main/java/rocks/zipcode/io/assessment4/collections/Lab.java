@@ -8,13 +8,16 @@ import java.util.List;
 public class Lab {
     String name;
     LabStatus labStatus;
+    Boolean forked;
 
     public Lab() {
         this.name = "";
+        this.forked = false;
     }
 
     public Lab(String labName) {
         this.name = labName;
+        this.forked = false;
     }
 
     public String getName() {
@@ -29,4 +32,11 @@ public class Lab {
         return labStatus;
     }
 
+    public Boolean getForked() {
+        return forked;
+    }
+
+    public void setForked(Boolean forked) {
+        this.forked = forked;
+    }
 }

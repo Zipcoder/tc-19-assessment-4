@@ -29,12 +29,17 @@ public class Student {
         return null;
     }
 
-    public void setLabStatus(String labName, LabStatus labStatus) throws UnsupportedOperationException{
-        getLab(labName).setStatus(labStatus);
+    public void setLabStatus(String labName, LabStatus labStatus) throws UnsupportedOperationException {
+        if (getLab(labName).getForked()) {
+            getLab(labName).setStatus(labStatus);
+        } else {
+            throw new UnsupportedOperationException();
+        }
     }
 
     public void forkLab(Lab lab) {
         lab.setStatus(LabStatus.PENDING);
+        lab.setForked(true);
         labs.add(lab);
     }
 
