@@ -1,7 +1,10 @@
 package rocks.zipcode.io.assessment4.arrays;
 
+import rocks.zipcode.io.assessment4.generics.ArrayUtility;
+
 import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Stream;
 
 /**
  * @author leon on 09/12/2018.
@@ -17,19 +20,10 @@ public class SquareArrayAnalyzer {
      * @return true if each `inputArray[i]` has a corresponding `squaredValues[j]` such that `squaredValues[j] == inputArray[i] * inputArray[i]`
      */
     public static Boolean compare(Integer[] inputArray, Integer[] squaredValues) {
-        if(inputArray.length != squaredValues.length)
-            return false;
 
-        Set<Integer> squareSet = new HashSet<>();
+        ArrayUtility<Integer> squaredAU = new ArrayUtility<>(squaredValues);
+        ArrayUtility<Integer> inputAU = new ArrayUtility<>(inputArray);
+        return Stream.of(inputArray).allMatch( i -> squaredAU.getNumberOfOccurrences(i * i).equals(inputAU.getNumberOfOccurrences(i)));
 
-        for(Integer in:squaredValues){
-            squareSet.add((int) Math.sqrt(in));
-        }
-
-        for(Integer in:inputArray){
-            if(!squareSet.contains(in))
-                return false;
-        }
-        return true;
     }
 }
