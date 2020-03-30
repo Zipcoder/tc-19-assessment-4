@@ -13,6 +13,8 @@ public class Student {
         this (new ArrayList<>());
     }
 
+
+
     public Student(List<Lab> labs) {
         this.labs= labs;
     }
@@ -27,7 +29,7 @@ public class Student {
     }
 
     public void setLabStatus(String labName, LabStatus labStatus) {
-        Lab lab = new Lab();
+        Lab lab = getLab(labName);
         if(lab == null){
             throw new UnsupportedOperationException();
         }
@@ -48,5 +50,10 @@ public class Student {
 
 
         return null;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
     }
 }
