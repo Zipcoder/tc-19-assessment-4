@@ -29,7 +29,7 @@ public class StringUtils {
             }
         }
 
-        return listOfSubStrings.stream().toArray(String[]::new);
+        return listOfSubStrings.toArray(new String[0]);
     }
 
     public static Integer getNumberOfSubStrings(String input){
