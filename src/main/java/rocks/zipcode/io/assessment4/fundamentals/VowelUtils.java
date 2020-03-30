@@ -7,38 +7,43 @@ public class VowelUtils {
     public static Boolean hasVowels(String word) {
         String[] vowels = {"a", "e", "i", "o", "u"};
         StringBuilder str = new StringBuilder(word);
-        for(String each : vowels) {
-            if(str.indexOf(each) > 0)
+        for (String each : vowels) {
+            if (str.indexOf(each) > 0)
                 return true;
         }
         return false;
     }
 
     public static Integer getIndexOfFirstVowel(String word) {
-        Integer index = 0;
-        String[] vowels = {"a", "e", "i", "o", "u"};
-        String[] words = word.split("");
+        String vowels = "aeiou";
 
         for (int i = 0; i < word.length(); i++) {
-            for (int j = 0; j < vowels.length; j++) {
-                if (words[i].equalsIgnoreCase(String.valueOf(vowels))) {
-                    index = i;
+            if (hasVowels(word)) {
+                if (vowels.contains(String.valueOf((word.charAt(i))))) {
+                    return i;
                 }
             }
-            return 5;
-
         }
-        return 5;
+            return -1;
+
     }
 
     public static Boolean startsWithVowel(String word) {
-        if(VowelUtils.startsWithVowel(word) == true) {
+        if (getIndexOfFirstVowel(word) == 0) {
             return true;
+        } else {
+            return false;
         }
-        return true;
+
     }
 
     public static Boolean isVowel(Character character) {
-        return null;
+        char c = Character.toLowerCase(character);
+        if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
+
+            return true;
+        }
+        return false;
     }
 }
+
