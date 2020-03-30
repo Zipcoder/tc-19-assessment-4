@@ -46,7 +46,6 @@ public class ArrayUtility<SomeType> {
 
     public SomeType[] filter(Function<SomeType, Boolean> predicate) {
         List<SomeType> list = new ArrayList<>();
-
         for (SomeType someType : array) {
             if (predicate.apply(someType)) {
                 list.add(someType);
