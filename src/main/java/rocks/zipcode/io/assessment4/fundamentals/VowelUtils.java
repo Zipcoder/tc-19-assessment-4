@@ -15,7 +15,7 @@ public class VowelUtils {
     }
 
     public static Integer getIndexOfFirstVowel(String word) {
-        String vowels = "aeiou";
+        String vowels = "aeiouAEIOU";
 
         for (int i = 0; i < word.length(); i++) {
             if (hasVowels(word)) {
