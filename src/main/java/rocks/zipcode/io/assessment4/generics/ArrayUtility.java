@@ -18,29 +18,19 @@ public class ArrayUtility<SomeType> {
     }
 
     public SomeType findOddOccurringValue() {
-        Map<SomeType, Long> map = Arrays.stream ( array ).collect ( Collectors.groupingBy ( x -> x, Collectors.counting () ) );
-        long occurrenceCount = 0;
-        SomeType value = null;
-        for (Map.Entry<SomeType, Long> each : map.entrySet ()) {
-            if (each.getValue () % 2 != 0) {
-                occurrenceCount = each.getValue ();
-                value = each.getKey ();
-            }
+        for (int i = 0; i < array.length; i++) {
+            if (getNumberOfOccurrences ( array[i] ) % 2 == 1)
+                return array[i];
         }
-        return value;
+        return null;
     }
 
     public SomeType findEvenOccurringValue() {
-        Map<SomeType, Long> map = Arrays.stream ( array ).collect ( Collectors.groupingBy ( x -> x, Collectors.counting () ) );
-        long occurrenceCount = 0;
-        SomeType value = null;
-        for (Map.Entry<SomeType, Long> each : map.entrySet ()) {
-            if (each.getValue () % 2 == 0) {
-                occurrenceCount = each.getValue ();
-                value = each.getKey ();
-            }
+        for (int i = 0; i < array.length; i++) {
+            if (getNumberOfOccurrences ( array[i] ) % 2 == 0)
+                return array[i];
         }
-        return value;
+        return null;
     }
 
     public Integer getNumberOfOccurrences(SomeType valueToEvaluate) {
@@ -55,6 +45,6 @@ public class ArrayUtility<SomeType> {
 
     public SomeType[] filter(Function<SomeType, Boolean> predicate) {
 
-        return Arrays.stream(array).filter(predicate::apply).collect(toList()).toArray(Arrays.copyOf(array, 0));
+        return Arrays.stream ( array ).filter ( predicate::apply ).collect ( toList () ).toArray ( Arrays.copyOf ( array, 0 ) );
     }
 }

@@ -27,14 +27,11 @@ public class VowelUtils {
 
     public static Boolean startsWithVowel(String word) {
         Boolean startWith = false;
-        if (word.toUpperCase ().charAt(0) == 'A' || word.charAt(0) == 'E' || word.charAt(0) == 'I' || word.charAt(0) == 'O' || word.charAt(0) == 'U') {
+        if (word.toUpperCase ().charAt(0) == 'A' || word.toUpperCase ( ).charAt(0) == 'E' || word.toUpperCase ( ).charAt(0) == 'I' || word.toUpperCase ().charAt(0) == 'O' || word.toUpperCase ().charAt(0) == 'U') {
             startWith = true;
         }
         return startWith;
     }
-//        if (word.matches ( "\b[aeiouAEIOU]" )) {
-//            startWith = true;
-//        } return startWith;
 
 
     public static Boolean isVowel(Character character) {
