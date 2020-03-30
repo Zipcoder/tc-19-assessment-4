@@ -35,15 +35,20 @@ public class TicTacToe {
     }
 
     public Boolean isColumnHomogeneous(Integer columnIndex) {
-        String[] column  = getRow(columnIndex);
-        if(column[0].equals(column[1]) && column[0].equals(column[2])){
-            return true;
-        }
+
         return false;
     }
 
     public String getWinner() {
-        return null;
+        String winner = null;
+        for(int i = 0; i< 3;i++){
+            if(isColumnHomogeneous(i)){
+                winner = getColumn(i)[0];
+            }if(isRowHomogenous(i)){
+                winner = getRow(i)[0];
+           }
+        }
+        return winner;
     }
 
     public String[][] getBoard() {
