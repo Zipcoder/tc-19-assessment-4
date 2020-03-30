@@ -19,6 +19,7 @@ public class SquareArrayAnalyzer {
             for (int j = 0; j < squaredValues.length ; j++) {
                 if (inputArray[i] * inputArray[i] == squaredValues[j]){
                     count++;
+                    break;
                 }
             }
             if (count == squaredValues.length){
