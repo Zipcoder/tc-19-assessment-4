@@ -24,7 +24,7 @@ public enum RockPaperScissorHandSign {
     public RockPaperScissorHandSign getLoser() {
 
         switch (this) {
-            
+
             case ROCK:
                 return SCISSOR;
             case PAPER:

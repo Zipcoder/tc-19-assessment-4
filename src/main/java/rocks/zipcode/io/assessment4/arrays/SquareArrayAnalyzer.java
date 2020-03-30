@@ -17,15 +17,9 @@ public class SquareArrayAnalyzer {
      */
     public static Boolean compare(Integer[] inputArray, Integer[] squaredValues) {
 
-        Arrays.sort(inputArray);
-        Arrays.sort(squaredValues);
-        for (int i = 0; i < inputArray.length; i++) {
-            for (int j = 0; j < squaredValues.length; j++) {
-                if (Math.pow(inputArray[i],2) == (squaredValues[j])) {
-                    return true;
-                }
-            }
-        }
-        return false;
+        for(Integer i : inputArray)
+            for (Integer s : squaredValues)
+                if (i*i == s) {return true;}
+               return false;
     }
 }
