@@ -10,6 +10,7 @@ public class Student {
     private ArrayList<Lab> labs;
 
     public Student() {
+
         this(new ArrayList<>());
     }
 
@@ -18,6 +19,10 @@ public class Student {
     }
 
     public Lab getLab(String labName) {
+
+        for(Lab lab :labs){
+            if(labName.equals(lab.getName())) return lab;
+        }
         return null;
     }
 
