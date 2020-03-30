@@ -3,6 +3,8 @@ package rocks.zipcode.io.assessment4.collections;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 /**
  * @author leon on 10/12/2018.
@@ -19,13 +21,10 @@ public class Student {
     }
 
     public Lab getLab(String labName) {
-        for(Lab l : labs){
-            if(l.getName().equals(labName)){
-                return l;
-            }
-        }
-        return null;
-    }
+       return labs.stream().filter(l->l.getName().equals(labName))
+                .findFirst().orElse(null);
+   }
+
 
     public void setLabStatus(String labName, LabStatus labStatus) {
         Lab l = getLab(labName);
@@ -52,10 +51,8 @@ public class Student {
     @Override
     public String toString() {
         labs.sort(Comparator.comparing(Lab::getName));
-        StringBuilder sb = new StringBuilder();
-        for(Lab l : labs){
-            sb.append(l.getName() + " > " + l.getStatus() + "\n");
-        }
-        return sb.toString().trim();
+        return labs.stream()
+                .map(l->l.getName() + " > " + l.getStatus() + "\n")
+                .collect(Collectors.joining()).trim();
     }
 }
