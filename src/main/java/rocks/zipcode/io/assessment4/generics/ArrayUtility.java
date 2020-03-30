@@ -1,5 +1,4 @@
 package rocks.zipcode.io.assessment4.generics;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Function;
@@ -17,30 +16,18 @@ public class ArrayUtility<SomeType> {
     }
 
     public SomeType findOddOccurringValue() {
-        int sum = 0;
-        for (SomeType t :array) {
-            if(getNumberOfOccurrences(t)%2==1)
-                return t;
-        }
-        return null;
+        //return Stream.of(array).filter( e -> getNumberOfOccurrences(e)%2==1 ).findFirst().orElse(null);
+        return filter( e -> getNumberOfOccurrences(e)%2==1 )[0];
     }
 
     public SomeType findEvenOccurringValue() {
-        int sum = 0;
-        for (SomeType t :array) {
-            if(getNumberOfOccurrences(t)%2==0)
-                return t;
-        }
-        return null;
+        //return Stream.of(array).filter( e -> getNumberOfOccurrences(e)%2==0 ).findFirst().orElse(null);
+        return filter( e -> getNumberOfOccurrences(e)%2==0 )[0];
     }
 
     public Integer getNumberOfOccurrences(SomeType valueToEvaluate) {
-        int c = 0;
-        for (SomeType t :array) {
-            if(t.equals(valueToEvaluate))
-                c++;
-        }
-        return c;
+        //return (int)Stream.of(array).filter( e -> e.equals(valueToEvaluate)).count();
+        return filter(e -> e.equals(valueToEvaluate)).length;
     }
 
     public SomeType[] filter(Function<SomeType, Boolean> predicate) {
