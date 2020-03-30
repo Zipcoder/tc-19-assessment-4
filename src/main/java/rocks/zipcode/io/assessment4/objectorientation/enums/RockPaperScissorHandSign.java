@@ -10,7 +10,9 @@ public enum RockPaperScissorHandSign {
         return null;
     }
 
-    public RockPaperScissorHandSign getLoser() {
-        return null;
+        public RockPaperScissorHandSign getLoser ( ) {
+            return null;
+        }
     }
-}
+
+

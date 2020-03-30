@@ -1,5 +1,8 @@
 package rocks.zipcode.io.assessment4.generics;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.function.Function;
 
 /**
@@ -13,18 +16,19 @@ public class ArrayUtility<SomeType> {
     }
 
     public SomeType findOddOccurringValue() {
-        return null;
-    }
+       return null;
+}
 
     public SomeType findEvenOccurringValue() {
-        return null;
+       return null;
     }
 
     public Integer getNumberOfOccurrences(SomeType valueToEvaluate) {
-        return null;
+       return null;
     }
 
     public SomeType[] filter(Function<SomeType, Boolean> predicate) {
-        return null;
+       return null;
     }
 }
+
