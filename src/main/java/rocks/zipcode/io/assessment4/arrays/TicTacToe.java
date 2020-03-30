@@ -29,7 +29,7 @@ public class TicTacToe {
 
     public Boolean isRowHomogenous(Integer rowIndex) {
 
-        return (this.board[rowIndex][0] == this.board[rowIndex][1]) && (this.board[rowIndex][1] == this.board[rowIndex][2]);
+        return (this.board[rowIndex][0].equals(this.board[rowIndex][1])) && (this.board[rowIndex][1] == this.board[rowIndex][2]);
     }
 
     public Boolean isColumnHomogeneous(Integer columnIndex) {
