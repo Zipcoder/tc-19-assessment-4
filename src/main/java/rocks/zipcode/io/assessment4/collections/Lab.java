@@ -28,11 +28,12 @@ public class Lab {
 
 
 
-    public void setLabStatus(LabStatus labStatus) {
+    public void setStatus(LabStatus labStatus) {
+
         this.labStatus = labStatus;
     }
 
-    public LabStatus getLabStatus() {
+    public LabStatus getStatus() {
 
         return this.labStatus;
     }

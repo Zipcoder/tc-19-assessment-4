@@ -28,13 +28,25 @@ public class Student {
     }
 
     public void setLabStatus(String labName, LabStatus labStatus) {
-//        labs.contains(getLab(labName)))(getLab()
+        Lab lab = new Lab();
+        if(lab == null){
+            throw new UnsupportedOperationException();
+        }
+        lab.setStatus(labStatus);
     }
 
     public void forkLab(Lab lab) {
+        lab.setStatus(LabStatus.PENDING);
     }
 
     public LabStatus getLabStatus(String labName) {
+        for(Lab lab : labs){
+            if(lab.getName().equals(labName)){
+                return lab.getStatus();
+            }
+        }
+
+
         return null;
     }
 }

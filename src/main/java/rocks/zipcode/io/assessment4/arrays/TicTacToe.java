@@ -36,7 +36,7 @@ public class TicTacToe {
 
     public Boolean isColumnHomogeneous(Integer columnIndex) {
 
-        return false;
+        return (getColumn(columnIndex)[0] == (getColumn(columnIndex)[1]) && getColumn(columnIndex)[1] == getColumn(columnIndex)[2]);
     }
 
     public String getWinner() {
