@@ -20,20 +20,16 @@ public class StringUtils {
     }
 
     public static String[] getAllSubStrings(String string) {
-        LinkedList<String> arrayList = new LinkedList<>();
-        for (int i = 0; i < string.length(); i++) {
-            for (int k = i + 1; k < string.length(); k++) {
-                arrayList.add(i, string.substring(i, k));
-                arrayList.add(i, string.substring(i, k + 1));
+        List<String> listOfSubStrings = new ArrayList<>();
+
+        for(int i = 0; i < string.length(); i++){
+            for(int j =  i + 1; j <= string.length(); j++){
+                if(!listOfSubStrings.contains(string.substring(i, j))) {
+                    listOfSubStrings.add(string.substring(i, j));
+                }
             }
         }
-        List<String> removeDuplicates = new ArrayList<>(new HashSet<>(arrayList));
-        String[] arr = new String[removeDuplicates.size() + 1];
-        for (int i = 0; i < removeDuplicates.size(); i++) {
-            arr[i] = removeDuplicates.get(i);
-        }
-        arr[arr.length - 1] = string.substring(string.length() - 1);
-        return arr;
+        return listOfSubStrings.stream().toArray(String[]::new);
     }
 
     public static Integer getNumberOfSubStrings(String input){
