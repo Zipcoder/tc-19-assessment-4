@@ -46,5 +46,15 @@ public class Student {
         return getLab(labName).getStatus();
     }
 
+    @Override
+    public String toString(){
+        String output = "";
+        for (int i = labs.size()-1; i > 0; i--){
+            output += labs.get(i).getName() + " > " + labs.get(i).getStatus() + "\n";
+        }
+        output += labs.get(0).getName() + " > " + labs.get(0).getStatus();
+        return output;
+    }
+
 }
 
