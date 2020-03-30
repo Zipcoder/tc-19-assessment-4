@@ -5,19 +5,24 @@ package rocks.zipcode.io.assessment4.fundamentals;
  */
 public class VowelUtils {
     public static Boolean hasVowels(String word) {
-        return null;
+        return getIndexOfFirstVowel(word) != -1;
     }
 
     public static Integer getIndexOfFirstVowel(String word) {
-        return null;
+        for (int i = 0; i < word.length(); i++) {
+            char c = word.charAt(i);
+            if (isVowel(c))
+                return word.indexOf(c);
+        }
+        return -1;
     }
 
 
     public static Boolean startsWithVowel(String word) {
-        return null;
+        return "eaiouEAIOU".indexOf(word.charAt(0)) >=0;
     }
 
     public static Boolean isVowel(Character character) {
-        return null;
+        return "AEIOUaeiou".indexOf(character) != -1;
     }
 }
