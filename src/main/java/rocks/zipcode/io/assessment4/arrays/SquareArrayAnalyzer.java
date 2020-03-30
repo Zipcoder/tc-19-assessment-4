@@ -1,5 +1,8 @@
 package rocks.zipcode.io.assessment4.arrays;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * @author leon on 09/12/2018.
  */
@@ -14,6 +17,19 @@ public class SquareArrayAnalyzer {
      * @return true if each `inputArray[i]` has a corresponding `squaredValues[j]` such that `squaredValues[j] == inputArray[i] * inputArray[i]`
      */
     public static Boolean compare(Integer[] inputArray, Integer[] squaredValues) {
-        return null;
+        if(inputArray.length != squaredValues.length)
+            return false;
+
+        Set<Integer> squareSet = new HashSet<>();
+
+        for(Integer in:squaredValues){
+            squareSet.add((int) Math.sqrt(in));
+        }
+
+        for(Integer in:inputArray){
+            if(!squareSet.contains(in))
+                return false;
+        }
+        return true;
     }
 }
