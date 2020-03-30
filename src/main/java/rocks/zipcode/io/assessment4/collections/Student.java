@@ -27,6 +27,14 @@ public class Student {
     }
 
     public void setLabStatus(String labName, LabStatus labStatus) {
+        boolean contains = false;
+        for(Lab lab : labs){
+            if(labName.equals(lab.getName())){
+                lab.setStatus(labStatus);
+                contains = true;
+                break;
+            }
+        }
     }
 
     public void forkLab(Lab lab) {
