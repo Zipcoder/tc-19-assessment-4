@@ -21,12 +21,12 @@ public class SquareArrayAnalyzer {
     public static Boolean compare(Integer[] inputArray, Integer[] squaredValues) {
         List<Integer> squareArray = new ArrayList<>();
         List<Integer> squared = new ArrayList<>();
-        for (Integer a : inputArray) {
-            squared.add(a * a);
+        for (Integer number : inputArray) {
+            squared.add(number * number);
         }
         Collections.addAll(squareArray, squaredValues);
-        for (Integer a : squared) {
-            if (!squareArray.contains(a)) {
+        for (Integer number : squared) {
+            if (!squareArray.contains(number)) {
                 return false;
             }
         }
