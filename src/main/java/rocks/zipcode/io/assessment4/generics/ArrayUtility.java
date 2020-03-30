@@ -1,9 +1,10 @@
 package rocks.zipcode.io.assessment4.generics;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Function;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * @author leon on 09/12/2018.
@@ -43,15 +44,8 @@ public class ArrayUtility<SomeType> {
     }
 
     public SomeType[] filter(Function<SomeType, Boolean> predicate) {
-        List<SomeType> arr = new ArrayList<>(Arrays.asList(array));
-        arr.clear();
-        int i = 0;
-        for(SomeType t:array){
-            if(predicate.apply(t))
-                arr.add(array[i]);
-            i++;
-        }
-        SomeType[] newCopy = Arrays.copyOf(array,arr.size());
-        return arr.toArray(newCopy);
+        List<SomeType> list = Stream.of(array).filter(predicate::apply).collect(Collectors.toList());
+        SomeType[] newCopy = Arrays.copyOf(array,list.size());
+        return list.toArray(newCopy);
     }
 }
