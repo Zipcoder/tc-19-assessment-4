@@ -25,4 +25,5 @@ public class  Lab {
     public LabStatus getStatus() {
         return labStatus;
     }
+
 }

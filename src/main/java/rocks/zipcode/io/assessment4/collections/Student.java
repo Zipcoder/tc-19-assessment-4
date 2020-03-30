@@ -46,4 +46,5 @@ public class Student {
     public LabStatus getLabStatus(String labName) {
         return getLab(labName).getStatus();
     }
+
 }

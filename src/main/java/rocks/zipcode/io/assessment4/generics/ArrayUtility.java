@@ -1,5 +1,7 @@
 package rocks.zipcode.io.assessment4.generics;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.function.Function;
 
 /**
@@ -28,6 +30,7 @@ public class ArrayUtility<SomeType> {
     }
 
     public SomeType findEvenOccurringValue() {
+        //loop stopping too early
         int count = 0;
         for (int i = 0; i < array.length; i++) {
             for (int j = i; j < array.length; j++) {
@@ -41,6 +44,7 @@ public class ArrayUtility<SomeType> {
             }
         }
         return null;
+
     }
 
     public Integer getNumberOfOccurrences(SomeType valueToEvaluate) {
@@ -54,7 +58,8 @@ public class ArrayUtility<SomeType> {
     }
 
     public SomeType[] filter(Function<SomeType, Boolean> predicate) {
-        SomeType[] filtered;
+        //probably going to need streams since it has a filter method
+
         return null;
     }
 }

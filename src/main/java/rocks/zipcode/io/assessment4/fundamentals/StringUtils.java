@@ -27,12 +27,12 @@ public class StringUtils {
             for (int j = i + 1; j <= string.length(); j++) {
                 count++;
                 String[] ans = new String[count + 1];
-                ans[k++] = string.substring(i, j);
+                ans[k++] += string.substring(i, j);
 //                System.out.println(string.substring(i, j));
                 subs.add(string.substring(i, j));
-//                System.out.println(subs);
+                System.out.println(subs);
                 Object[] nextArr = subs.toArray();
-                System.out.println(ans);
+                System.out.println(nextArr);
                 String[] strArr = Arrays.copyOf(nextArr, subs.size(), String[].class);
                 return strArr;
             }
