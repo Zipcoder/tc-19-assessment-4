@@ -18,6 +18,9 @@ public class Student {
     }
 
     public Lab getLab(String labName) {
+        if (labs.size()==0){
+            labs.add(new Lab(labName));
+        }
         for (Lab lab : labs){
             if (lab.getName().equals(labName)){
                 return lab;
@@ -26,13 +29,8 @@ public class Student {
         return null;
     }
 
-    public void setLabStatus(String labName, LabStatus labStatus) {
-        try {
-            LabStatus currentStatus = getLab(labName).getStatus();
-        } catch(Exception e) {
-            throw e;
-        }
-            getLab(labName).setStatus(labStatus);
+    public void setLabStatus(String labName, LabStatus labStatus) throws UnsupportedOperationException{
+        getLab(labName).setStatus(labStatus);
     }
 
     public void forkLab(Lab lab) {
@@ -41,6 +39,6 @@ public class Student {
     }
 
     public LabStatus getLabStatus(String labName) {
-        return getLab(labName).getStatus();
+            return getLab(labName).getStatus();
     }
 }

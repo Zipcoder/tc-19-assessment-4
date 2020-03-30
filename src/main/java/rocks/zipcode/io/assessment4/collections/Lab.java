@@ -11,12 +11,10 @@ public class Lab {
 
     public Lab() {
         this.name = "";
-        this.labStatus = null;
     }
 
     public Lab(String labName) {
         this.name = labName;
-        this.labStatus = null;
     }
 
     public String getName() {
@@ -24,10 +22,11 @@ public class Lab {
     }
 
     public void setStatus(LabStatus labStatus) {
-        this.labStatus=labStatus;
+        this.labStatus = labStatus;
     }
 
-    public LabStatus getStatus()  throws UnsupportedOperationException {
+    public LabStatus getStatus() throws UnsupportedOperationException {
         return labStatus;
     }
+
 }
