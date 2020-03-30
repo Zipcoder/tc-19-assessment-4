@@ -5,11 +5,23 @@ package rocks.zipcode.io.assessment4.fundamentals;
  */
 public class StringUtils {
     public static String capitalizeNthCharacter(String str, Integer indexToCapitalize) {
-        return null;
+        String[] newString = str.split("");
+        String returnString = "";
+        for(int i = 0; i < newString.length; i++){
+            if(i == indexToCapitalize){
+                returnString += newString[i].toUpperCase();
+            }
+            else{
+                returnString += newString[i];
+            }
+        }
+        return returnString;
     }
 
     public static Boolean isCharacterAtIndex(String baseString, Character characterToCheckFor, Integer indexOfString) {
-        return null;
+        String[] newArray = baseString.split("");
+
+        return newArray[indexOfString].equals(characterToCheckFor.toString());
     }
 
     public static String[] getAllSubStrings(String string) {
