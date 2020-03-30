@@ -4,20 +4,58 @@ package rocks.zipcode.io.assessment4.fundamentals;
  * @author leon on 09/12/2018.
  */
 public class VowelUtils {
+
     public static Boolean hasVowels(String word) {
-        return null;
+        char[] vowels = {'A', 'E', 'I', 'O', 'U','a','e','i','o','u'};
+        boolean answer = false;
+        for(int i = 0; i < word.length(); i++){
+            for(int j = 0; j < vowels.length; j++){
+                if(word.charAt(i) == vowels[j]){
+                    answer = true;
+                    return answer;
+                }
+            }
+        }
+
+        return answer;
+
     }
 
     public static Integer getIndexOfFirstVowel(String word) {
-        return null;
+        char[] vowels = {'a', 'e', 'i', 'o', 'u'};
+        int index = 0;
+        for(int i = 0; i < word.length(); i++){
+            for(int j = 0; j < vowels.length; j++){
+                if(word.charAt(i) == vowels[j]){
+                    index = i;
+                    return index;
+                }
+            }
+        }
+        return -1;
     }
 
 
     public static Boolean startsWithVowel(String word) {
-        return null;
+        char[] vowels = {'A', 'E', 'I', 'O', 'U'};
+        for(int i = 0; i < 1; i++){
+            for(int j = 0; j < vowels.length; j++){
+                if(word.charAt(i) == vowels[j]){
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     public static Boolean isVowel(Character character) {
-        return null;
+        char[] vowels = {'A', 'E', 'I', 'O', 'U','a','e','i','o','u'};
+        boolean answer = false;
+        for(int i = 0; i < vowels.length; i++){
+            if(character == vowels[i]){
+                answer = true;
+            }
+        }
+        return answer;
     }
 }
