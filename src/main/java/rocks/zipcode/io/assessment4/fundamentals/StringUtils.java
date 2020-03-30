@@ -9,15 +9,15 @@ public class StringUtils {
     public static String capitalizeNthCharacter(String str, Integer indexToCapitalize) {
         String upperCase = "";
         upperCase += Character.toUpperCase(str.charAt(indexToCapitalize));
-        String result = "";
+        StringBuilder result = new StringBuilder();
         for (int i = 0; i < str.length(); i++) {
             if(i == indexToCapitalize){
-                result += upperCase;
+                result.append(upperCase);
             } else {
-                result += str.charAt(i);
+                result.append(str.charAt(i));
             }
         }
-        return result;
+        return result.toString();
     }
 
     public static Boolean isCharacterAtIndex(String baseString, Character characterToCheckFor, Integer indexOfString) {

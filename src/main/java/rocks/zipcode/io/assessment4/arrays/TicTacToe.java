@@ -59,7 +59,6 @@ public class TicTacToe {
                 break;
             }
         }
-
         if(topLeftBotRightCheck("X")){
             winner = "X";
         } else if(topRightBotLeftCheck("X")){
