@@ -1,5 +1,6 @@
 package rocks.zipcode.io.assessment4.collections;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -7,24 +8,56 @@ import java.util.List;
  */
 public class Student {
 
+    ArrayList<Lab> labs;
+
     public Student() {
-        this(null);
+        this.labs = new ArrayList<>();
     }
 
     public Student(List<Lab> labs) {
+        this.labs = (ArrayList<Lab>) labs;
     }
 
     public Lab getLab(String labName) {
+        for (Lab lab : labs) {
+            if (labName.equalsIgnoreCase(lab.getName())) {
+                return lab;
+            }
+        }
         return null;
     }
 
     public void setLabStatus(String labName, LabStatus labStatus) {
+        if (labs.size() <= 0) {
+            throw new UnsupportedOperationException();
+        }
+        for (Lab lab : labs) {
+            if (lab.getName().equalsIgnoreCase(labName)) {
+                lab.setStatus(labStatus);
+            }
+        }
     }
 
     public void forkLab(Lab lab) {
+        lab.setStatus(LabStatus.PENDING);
+        labs.add(0, lab);
     }
 
     public LabStatus getLabStatus(String labName) {
+        for (Lab lab : labs) {
+            if (labName.equalsIgnoreCase(lab.getName())) {
+                return lab.getStatus();
+            }
+        }
         return null;
+    }
+
+    @Override
+    public String toString(){
+        StringBuffer sb = new StringBuffer();
+        for (Lab lab : labs) {
+            sb.append(lab.getName()).append(" > ").append(lab.getStatus()).append("\n");
+        }
+        return sb.substring(0, sb.length() - 1);
     }
 }
