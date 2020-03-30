@@ -4,21 +4,33 @@ package rocks.zipcode.io.assessment4.collections;
  * @author leon on 10/12/2018.
  */
 public class Lab {
+    private String labName;
+    private LabStatus labStatus;
+
+
+
     public Lab() {
-        this(null);
+
+        this.labName = null;
     }
 
     public Lab(String labName) {
+        this.labName = labName;
     }
 
     public String getName() {
-        return null;
+
+        return this.labName;
     }
 
-    public void setStatus(LabStatus labStatus) {
+
+
+    public void setLabStatus(LabStatus labStatus) {
+        this.labStatus = labStatus;
     }
 
-    public LabStatus getStatus() {
-        return null;
+    public LabStatus getLabStatus() {
+
+        return this.labStatus;
     }
 }
