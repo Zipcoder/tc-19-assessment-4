@@ -1,18 +1,17 @@
 package rocks.zipcode.io.assessment4.fundamentals;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * @author leon on 09/12/2018.
  */
 public class VowelUtils {
     public static Boolean hasVowels(String word) {
-        String[] vowels = {"a","e","i","o","u"};
-        for (int i = 0; i < word.length(); i++) {
-            String temp = "";
-            temp += word.charAt(i);
-            for (int j = 0; j < vowels.length; j++) {
-                if(temp.equalsIgnoreCase(vowels[j])){
-                    return true;
-                }
+       char[] arr = word.toCharArray();
+        for (char c : arr) {
+            if(isVowel(c)){
+               return true;
             }
         }
         return false;
@@ -31,20 +30,14 @@ public class VowelUtils {
         return result;
     }
 
-
     public static Boolean startsWithVowel(String word) {
         return isVowel(word.charAt(0));
     }
 
     public static Boolean isVowel(Character character) {
-        String temp = "";
-        temp += character;
-        String[] vowels = {"a","e","i","o","u"};
-        for (String c : vowels) {
-            if(c.equalsIgnoreCase(temp)){
-                return true;
-            }
-        }
-        return false;
+        String temp = character.toString();
+        Pattern pat = Pattern.compile("(?i)[aeiou]");
+        Matcher mat = pat.matcher(temp);
+        return mat.find();
     }
 }

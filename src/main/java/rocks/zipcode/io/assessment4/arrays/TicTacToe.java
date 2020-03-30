@@ -73,10 +73,6 @@ public class TicTacToe {
         return winner;
     }
 
-    public String[][] getBoard() {
-        return null;
-    }
-
     public boolean topLeftBotRightCheck(String playerPiece) {
         boolean outcome = false;
         for (int i = 0; i <= 2; i++) {
@@ -90,7 +86,6 @@ public class TicTacToe {
         return outcome;
     }
 
-    //    Diagonal (/)
     public boolean topRightBotLeftCheck(String playerPiece) {
         boolean outcome = false;
         int count = 0;
