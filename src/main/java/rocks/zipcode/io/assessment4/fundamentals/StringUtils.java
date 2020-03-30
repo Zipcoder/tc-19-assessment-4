@@ -5,7 +5,9 @@ package rocks.zipcode.io.assessment4.fundamentals;
  */
 public class StringUtils {
     public static String capitalizeNthCharacter(String str, Integer indexToCapitalize) {
-        return null;
+        char[] c = str.toCharArray();
+        c[indexToCapitalize] = Character.toUpperCase(c[indexToCapitalize]);
+        return new String(c);
     }
 
     public static Boolean isCharacterAtIndex(String baseString, Character characterToCheckFor, Integer indexOfString) {
