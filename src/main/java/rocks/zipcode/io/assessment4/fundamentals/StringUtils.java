@@ -1,5 +1,8 @@
 package rocks.zipcode.io.assessment4.fundamentals;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * @author leon on 09/12/2018.
  */
@@ -20,10 +23,18 @@ public class StringUtils {
     }
 
     public static String[] getAllSubStrings(String string) {
-        return null;
+        Set<String> subStr = new HashSet<>();
+
+        for (int i = 0; i <= string.length(); i++) {
+            for (int j = i+1; j < string.length()+1; j++) {
+                subStr.add(string.substring(i,j));
+            }
+        }
+
+        return subStr.toArray(new String[subStr.size()]);
     }
 
     public static Integer getNumberOfSubStrings(String input){
-        return null;
+        return getAllSubStrings(input).length;
     }
 }
