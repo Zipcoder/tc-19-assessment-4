@@ -1,6 +1,7 @@
 package rocks.zipcode.io.assessment4.fundamentals;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * @author leon on 09/12/2018.
@@ -18,26 +19,22 @@ public class StringUtils {
     }
 
     public static String[] getAllSubStrings(String string) {
-
-        String temp = "";
+        String temp;
+        ArrayList<String> subs = new ArrayList<>();
         int k = 0;
-//        for (int i = 0; i < string.length() - 1; i++) {
-//            for (int j = i + 1; j < string.length() - 2; j++) {
-//                temp = string.substring(i, i + j);
-//                listingSubs[k++] = temp;
-//            }
-//
-//        }
-//        return listingSubs;
-        ArrayList<String> answer = new ArrayList<>();
-        String[] listingSubs = new String[answer.size()];
+        int count = -1;
         for (int i = 0; i < string.length(); i++) {
-            for (int j = 0; j <= string.length(); j++) {
-                temp = string.substring(i, j);
-                System.out.println(temp);
-                answer.add(temp);
-                System.out.println(answer);
-                return null;
+            for (int j = i + 1; j <= string.length(); j++) {
+                count++;
+                String[] ans = new String[count + 1];
+                ans[k++] = string.substring(i, j);
+//                System.out.println(string.substring(i, j));
+                subs.add(string.substring(i, j));
+//                System.out.println(subs);
+                Object[] nextArr = subs.toArray();
+                System.out.println(ans);
+                String[] strArr = Arrays.copyOf(nextArr, subs.size(), String[].class);
+                return strArr;
             }
         }
         return null;
