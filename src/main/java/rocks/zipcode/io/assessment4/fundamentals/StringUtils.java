@@ -24,18 +24,16 @@ public class StringUtils {
     }
 
     public static String[] getAllSubStrings(String string) {
-        int length = string.length() * (string.length() + 1) / 2 - 1;
-        String[] arr = new String[length];
-        int count = 0;
-        String result = "";
+        String[] arr;
+        String toBeSplit = "";
         for (int i = 0; i < string.length(); i++) {
-            for (int j = i+1; j < string.length() ; j++) {
-                result = (string.charAt(i) + string.charAt(j) + "");
-                arr[count] = result;
-                count++;
+            for (int j = i + 1; j <= string.length(); j++) {
+               if (!string.substring(i,j).equals(" "))
+                toBeSplit += (string.substring(i,j) +",");
+                System.out.println(string.substring(i,j));}
             }
 
-        }
+        arr = toBeSplit.split(",");
 
 
         return arr;
