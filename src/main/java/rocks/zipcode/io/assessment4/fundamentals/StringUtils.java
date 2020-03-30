@@ -20,10 +20,7 @@ public class StringUtils {
 //        if(baseString.indexOf(indexOfString) == characterToCheckFor){
 //            return true;
 //        }
-        if( ubaseString.indexOf(indexOfString) == characterToCheckFor){
-            return true;
-        }
-        return false;
+        return ubaseString.indexOf(indexOfString) == characterToCheckFor;
     }
 
     public static String[] getAllSubStrings(String string) {

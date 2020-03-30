@@ -7,5 +7,5 @@ package rocks.zipcode.io.assessment4.collections;
 public enum LabStatus {
     COMPLETED,
     INCOMPLETE,
-    PENDING;
+    PENDING
 }

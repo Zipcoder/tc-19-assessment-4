@@ -28,8 +28,6 @@ public class VowelUtils {
     }
 
     public static Boolean isVowel(Character character) {
-        if(character == 'a'|| character == 'e'|| character == 'i' ||character == 'o' ||character == 'u'||character == 'A'||character == 'E'||character == 'I'||character == 'U'||character == 'O')
-        return true;
-        return false;
+        return character == 'a' || character == 'e' || character == 'i' || character == 'o' || character == 'u' || character == 'A' || character == 'E' || character == 'I' || character == 'U' || character == 'O';
     }
 }

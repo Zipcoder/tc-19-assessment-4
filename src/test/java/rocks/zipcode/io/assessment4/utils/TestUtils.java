@@ -30,7 +30,6 @@ public class TestUtils {
             ArgType1 arg1, ArgType2 arg2, Long maxTimeInMilliseconds) {
         if (timeMethod(function, arg1, arg2) > maxTimeInMilliseconds) {
             Throwable timeoutException = new TimeoutException("Method must perform in under " + maxTimeInMilliseconds + "millseconds");
-            ;
             throw new Error(timeoutException);
         }
     }

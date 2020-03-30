@@ -28,10 +28,7 @@ public class TicTacToe {
 
     public Boolean isRowHomogenous(Integer rowIndex) {
         String[] row = getRow(rowIndex);
-        if(row[0].equals(row[1]) && row[1].equals(row[2])){
-            return true;
-        }
-        return false;
+        return row[0].equals(row[1]) && row[1].equals(row[2]);
     }
 
     public Boolean isColumnHomogeneous(Integer columnIndex) {
