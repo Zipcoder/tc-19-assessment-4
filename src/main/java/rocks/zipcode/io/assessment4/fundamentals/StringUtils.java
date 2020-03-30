@@ -6,6 +6,8 @@ package rocks.zipcode.io.assessment4.fundamentals;
 public class StringUtils {
     public static String capitalizeNthCharacter(String str, Integer indexToCapitalize) {
 
+        //str.substring(indexToCapitalize, 1).toUpperCase() + str.substring(1);
+
         char[] arr = str.toCharArray();
         arr[indexToCapitalize] = Character.toUpperCase(arr[indexToCapitalize]);
         String result = new String(arr);

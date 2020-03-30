@@ -5,10 +5,22 @@ package rocks.zipcode.io.assessment4.fundamentals;
  */
 public class VowelUtils {
     public static Boolean hasVowels(String word) {
-        return null;
+        String result = "aeiou";
+        for (int i = 0; i < word.length() ; i++) {
+            if (hasVowels(word.toString())) ;
+        }
+        return true;
     }
 
     public static Integer getIndexOfFirstVowel(String word) {
+
+        char [] firstVowel = {'a','e','o','i','u','y'};
+
+        for (int i = 0; i < word.length() ; i++) {
+            if(word.charAt(i) == firstVowel[5]);
+            return i;
+
+        }
         return null;
     }
 
