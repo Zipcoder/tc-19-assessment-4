@@ -2,6 +2,7 @@ package rocks.zipcode.io.assessment4.generics;
 
 
 
+import java.util.Arrays;
 import java.util.function.Function;
 
 /**
@@ -44,6 +45,15 @@ public class ArrayUtility<SomeType> {
     }
 
     public SomeType[] filter(Function<SomeType, Boolean> predicate) {
-        return null;
+        SomeType[] result = array.clone();
+        Integer index =0;
+        for( SomeType st : array){
+            if(predicate.apply(st)){
+                result[index++] = st;
+
+            }
+        }
+        return Arrays.copyOf(result, index) ;
+
     }
 }
