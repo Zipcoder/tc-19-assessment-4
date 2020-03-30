@@ -1,5 +1,7 @@
 package rocks.zipcode.io.assessment4.fundamentals;
 
+import java.util.ArrayList;
+
 /**
  * @author leon on 09/12/2018.
  */
@@ -16,17 +18,29 @@ public class StringUtils {
     }
 
     public static String[] getAllSubStrings(String string) {
-        String[] listingSubs = new String[string.length()];
-        String temp;
-        int k = 0;
-        for (int i = 0; i < string.length() - 1; i++) {
-            for (int j = i + 1; j < string.length() - 2; j++) {
-                temp = string.substring(i, i + j);
-                listingSubs[k++] = temp;
-            }
 
+        String temp = "";
+        int k = 0;
+//        for (int i = 0; i < string.length() - 1; i++) {
+//            for (int j = i + 1; j < string.length() - 2; j++) {
+//                temp = string.substring(i, i + j);
+//                listingSubs[k++] = temp;
+//            }
+//
+//        }
+//        return listingSubs;
+        ArrayList<String> answer = new ArrayList<>();
+        String[] listingSubs = new String[answer.size()];
+        for (int i = 0; i < string.length(); i++) {
+            for (int j = 0; j <= string.length(); j++) {
+                temp = string.substring(i, j);
+                System.out.println(temp);
+                answer.add(temp);
+                System.out.println(answer);
+                return null;
+            }
         }
-        return listingSubs;
+        return null;
     }
 
     public static Integer getNumberOfSubStrings(String input){
