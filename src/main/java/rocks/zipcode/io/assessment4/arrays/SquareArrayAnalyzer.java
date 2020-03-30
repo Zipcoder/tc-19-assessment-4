@@ -1,9 +1,5 @@
 package rocks.zipcode.io.assessment4.arrays;
-
 import rocks.zipcode.io.assessment4.generics.ArrayUtility;
-
-import java.util.HashSet;
-import java.util.Set;
 import java.util.stream.Stream;
 
 /**
