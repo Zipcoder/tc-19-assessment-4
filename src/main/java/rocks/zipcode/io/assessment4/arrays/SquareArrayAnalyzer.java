@@ -20,18 +20,12 @@ public class SquareArrayAnalyzer {
         Arrays.sort(inputArray);
         Arrays.sort(squaredValues);
 
-        int counter = 1;
-        int counter2 = 1;
         for (int i = 0; i < inputArray.length; i++) {
-            counter += inputArray[i];
-            for (int j = 0; j < squaredValues.length; j++) {
-                counter2 = squaredValues[j];
-            }
-            if (counter == counter2 * counter2) {
-                return false;
+            if (inputArray[i] * inputArray[i] == squaredValues[i]) {
+                return true;
             }
         }
-        return true;
+        return false;
     }
 }
 
