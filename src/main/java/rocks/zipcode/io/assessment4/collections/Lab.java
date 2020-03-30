@@ -8,10 +8,13 @@ public class Lab {
     private LabStatus labStatus;
 
 
+    public String getLabName() {
+        return labName;
+    }
 
     public Lab() {
 
-        this.labName = null;
+        this.labName = "";
     }
 
     public Lab(String labName) {
