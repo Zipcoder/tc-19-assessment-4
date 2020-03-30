@@ -5,18 +5,44 @@ package rocks.zipcode.io.assessment4.fundamentals;
  */
 public class StringUtils {
     public static String capitalizeNthCharacter(String str, Integer indexToCapitalize) {
-        return null;
+        StringBuilder stringBuilder = new StringBuilder(str);
+        stringBuilder.setCharAt(indexToCapitalize, Character.toUpperCase(stringBuilder.charAt(indexToCapitalize)));
+        String result = "" + stringBuilder;
+
+        return result;
     }
 
     public static Boolean isCharacterAtIndex(String baseString, Character characterToCheckFor, Integer indexOfString) {
-        return null;
+       char[] arr = new char[baseString.length()];
+        for (int i = 0; i < baseString.length() ; i++) {
+            arr[i] = baseString.charAt(i);
+        }
+        if (arr[indexOfString] == (characterToCheckFor)){
+            return true;
+        }
+        return false;
     }
 
     public static String[] getAllSubStrings(String string) {
-        return null;
+        int length = string.length() * (string.length() + 1) / 2 - 1;
+        String[] arr = new String[length];
+        int count = 0;
+        String result = "";
+        for (int i = 0; i < string.length(); i++) {
+            for (int j = i+1; j < string.length() ; j++) {
+                result = (string.charAt(i) + string.charAt(j) + "");
+                arr[count] = result;
+                count++;
+            }
+
+        }
+
+
+        return arr;
     }
 
     public static Integer getNumberOfSubStrings(String input){
-        return null;
+        int n = input.length();
+        return n * (n + 1) / 2 - 1;
     }
 }
