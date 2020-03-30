@@ -15,8 +15,12 @@ public class StringUtils {
 
     public static Boolean isCharacterAtIndex(String baseString, Character characterToCheckFor, Integer indexOfString) {
         String lbaseString = baseString.toLowerCase();
-        //String lcharacterToCheckFor = characterToCheckFor.toLowerCase();
-        if(lbaseString.indexOf(indexOfString) == characterToCheckFor){
+        String ubaseString = baseString.toUpperCase();
+
+//        if(baseString.indexOf(indexOfString) == characterToCheckFor){
+//            return true;
+//        }
+        if( ubaseString.indexOf(indexOfString) == characterToCheckFor){
             return true;
         }
         return false;
