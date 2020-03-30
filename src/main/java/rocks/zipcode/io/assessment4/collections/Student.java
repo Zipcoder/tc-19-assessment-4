@@ -10,7 +10,6 @@ public class Student {
     private List<Lab> labs;
 
     public Student() {
-
         this (new ArrayList<>());
     }
 
@@ -20,7 +19,7 @@ public class Student {
 
     public Lab getLab(String labName) {
         for(Lab lab : labs){
-            if(labName == lab.getLabName())
+            if(lab.getName()== labName)
                 return lab;
         }
 
@@ -36,6 +35,7 @@ public class Student {
     }
 
     public void forkLab(Lab lab) {
+        labs.add(lab);
         lab.setStatus(LabStatus.PENDING);
     }
 

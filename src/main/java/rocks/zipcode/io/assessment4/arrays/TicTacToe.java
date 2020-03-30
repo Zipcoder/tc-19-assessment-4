@@ -39,6 +39,11 @@ public class TicTacToe {
         return (getColumn(columnIndex)[0] == (getColumn(columnIndex)[1]) && getColumn(columnIndex)[1] == getColumn(columnIndex)[2]);
     }
 
+    public Boolean isDiagonalHomogeneous(){
+
+        return null;
+    }
+
     public String getWinner() {
         String winner = null;
         for(int i = 0; i< 3;i++){
