@@ -1,6 +1,8 @@
 package rocks.zipcode.io.assessment4.fundamentals;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Stream;
@@ -28,7 +30,6 @@ public class StringUtils {
     }
 
     public static String[] getAllSubStrings(String string) {
-        String[] retArray = new String[getNumberOfSubStrings(string)];
         List<String> sub = new ArrayList<>();
         for (int i = 0; i < string.length(); i++) {
             for (int j = i + 1; j <= string.length(); j++) {
@@ -37,22 +38,12 @@ public class StringUtils {
                     sub.add(sString);
             }
         }
-        for (int i = 0; i < sub.size(); i++) {
-            retArray[i] = sub.get(i);
-        }
-        return retArray;
+        return sub.stream().toArray(String[]::new);
     }
 
     public static Integer getNumberOfSubStrings(String input){
-        List<String> sub = new ArrayList<>();
-        for (int i = 0; i < input.length(); i++) {
-            for (int j = i + 1; j <= input.length(); j++) {
-                String sString = input.substring(i, j);
-                if (!sub.contains(sString))
-                    sub.add(sString);
-            }
-        }
-        return sub.size();
+        return (int)Arrays.stream(getAllSubStrings(input))
+                .count();
     }
 
 }

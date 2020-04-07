@@ -1,14 +1,17 @@
 package rocks.zipcode.io.assessment4.generics;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Function;
 
 /**
  * @author leon on 09/12/2018.
  */
 public class ArrayUtility<SomeType> {
+
     private final SomeType[] array;
 
     public ArrayUtility(SomeType[] array) {
@@ -34,12 +37,9 @@ public class ArrayUtility<SomeType> {
     }
 
     public Integer getNumberOfOccurrences(SomeType valueToEvaluate) {
-        Integer occurance = 0;
-        for (int i = 0; i < array.length; i++) {
-            if(array[i].equals(valueToEvaluate))
-                occurance++;
-        }
-        return occurance;
+        return (int) Arrays.stream(array)
+                .filter(x -> x.equals(valueToEvaluate))
+                .count();
     }
 
     public SomeType[] filter(Function<SomeType, Boolean> predicate) {
